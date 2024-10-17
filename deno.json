@@ -1,7 +1,8 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts",
-    "start": "deno run --allow-read --allow-write --allow-net --allow-env main.ts"
+    "start": "deno run --allow-read --allow-write --allow-net --allow-env main.ts",
+    "compile": "deno compile --output mrenamer --allow-read --allow-write --allow-env --allow-net main.ts"
   },
   "imports": {
     "@std/cli": "jsr:@std/cli@^1.0.6",

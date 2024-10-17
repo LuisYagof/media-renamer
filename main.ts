@@ -6,9 +6,9 @@ import { renameFile } from './src/modules/file-manager.ts';
 
 async function main() {
   const args = parseArgs(Deno.args);
-  const targetPath = args._[0] as string;
+  const targetPath = args._[0] || Deno.cwd();
 
-  if (!targetPath) {
+  if (!targetPath || typeof targetPath !== 'string') {
     console.error('Please provide a file or directory path');
     Deno.exit(1);
   }

@@ -3,6 +3,7 @@ env/.env
 
 # Ignore executable file
 media-renamer.exe
+mrenamer.exe
 
 # Ignore common OS and editor files
 .DS_Store
