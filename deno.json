@@ -4,7 +4,6 @@
     "start": "deno run --allow-read --allow-write --allow-net --allow-env main.ts"
   },
   "imports": {
-    "@/": "./src/",
     "@std/cli": "jsr:@std/cli@^1.0.6",
     "@std/dotenv": "jsr:@std/dotenv@^0.220.1",
     "@std/flags": "jsr:@std/flags@^0.220.1",

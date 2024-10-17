@@ -1,0 +1,21 @@
+{
+  "imports": {
+    "@/": "./src/"
+  },
+  "lint": {
+    "include": ["src/", "main.ts", "deno.jsonc", "deno.json"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": true,
+    "include": ["src/", "main.ts", "deno.jsonc", "deno.json"]
+  }
+}
