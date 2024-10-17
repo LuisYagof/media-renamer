@@ -1,0 +1,12 @@
+# Ignore real environment variables file
+env/.env
+
+# Ignore common OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
