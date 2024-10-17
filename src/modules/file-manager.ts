@@ -5,10 +5,12 @@ import { searchTMDB } from './tmdb.ts';
 export async function renameFile(filePath: string): Promise<void> {
   const originalName = basename(filePath);
   const { name, type } = parseFileName(originalName);
+  const sanitizedName = sanitizeFileName(name);
 
-  const mediaInfo = await searchTMDB(name, type);
+  const mediaInfo = await searchTMDB(sanitizedName, type);
   if (!mediaInfo) {
     console.log(`Could not find information for: ${originalName}`);
+    console.log(`Searched term: ${sanitizedName}`);
     return;
   }
 
@@ -42,4 +44,18 @@ function parseFileName(
     return { name: nameWithoutExtension.split('S0')[0].trim(), type: 'tv' };
   }
   return { name: nameWithoutExtension, type: 'movie' };
+}
+
+function sanitizeFileName(fileName: string): string {
+  const cleanedName = fileName
+    .replace(/\d{3,4}p/, '')
+    .replace(
+      /\b(BluRay|BRRip|WEBRip|DVDRip|HDRip|HDTV|x264|AAC|AC3|XviD|AAC5)\b/gi,
+      '',
+    )
+    .replace(/(\[[^\]]*\]|\([^\)]*\))/, '')
+    .replace(/[\.\-_]/g, ' ')
+    .trim();
+
+  return cleanedName;
 }

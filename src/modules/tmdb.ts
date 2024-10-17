@@ -6,7 +6,11 @@ const env = await load({
   envPath: './env/.env',
   examplePath: './env/.env.template',
 });
-const TMDB_API_KEY = env['TMDB_API_KEY'] || Deno.env.get('TMDB_API_KEY');
+/*
+ * REPLACE TMDB_API_KEY BEFORE RUNNING 'deno run compile'
+ */
+const TMDB_API_KEY = Deno.env.get('TMDB_API_KEY') || env['TMDB_API_KEY'];
+// const TMDB_API_KEY = '<API_KEY>';
 const TMDB_API_BASE = 'https://api.themoviedb.org/3';
 if (!TMDB_API_KEY) {
   console.error(
