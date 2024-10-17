@@ -1,7 +1,8 @@
-import { renameFile } from '@/modules/file-manager.ts';
 import { parseArgs } from 'jsr:@std/cli';
 import { walk } from 'jsr:@std/fs';
 import { resolve } from 'jsr:@std/path';
+// import { renameFile } from '@/modules/file-manager.ts';
+import { renameFile } from './src/modules/file-manager.ts';
 
 async function main() {
   const args = parseArgs(Deno.args);

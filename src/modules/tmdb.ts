@@ -1,5 +1,6 @@
-import type { Cast, MediaInfo } from '@/types/tmdb.types.ts';
 import { load } from 'jsr:@std/dotenv';
+// import type { Cast, MediaInfo } from '@/types/tmdb.types.ts';
+import type { Cast, MediaInfo } from '../types/tmdb.types.ts';
 
 const env = await load({
   envPath: './env/.env',

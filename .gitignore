@@ -1,6 +1,9 @@
 # Ignore real environment variables file
 env/.env
 
+# Ignore executable file
+media-renamer.exe
+
 # Ignore common OS and editor files
 .DS_Store
 Thumbs.db

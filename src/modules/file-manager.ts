@@ -1,5 +1,6 @@
-import { searchTMDB } from '@/modules/tmdb.ts';
 import { basename, dirname, extname, join } from 'jsr:@std/path';
+// import { searchTMDB } from '@/modules/tmdb.ts';
+import { searchTMDB } from './tmdb.ts';
 
 export async function renameFile(filePath: string): Promise<void> {
   const originalName = basename(filePath);
